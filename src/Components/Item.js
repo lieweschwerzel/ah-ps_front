@@ -2,12 +2,14 @@ import axios from 'axios'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 function TrackedItem(props) {
     
     const deleteitemHandler = (email, product_name) => {
         axios.delete(`http://localhost:8000/subs/${email}/${product_name}`)
             .then(res => {
                 console.log("Clicked from Grandchild  " + res.data);
+                //call refresh in app.js to refresh page on msg to true or false
                 props.refresh();
             })
     }
