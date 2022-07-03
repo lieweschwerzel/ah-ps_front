@@ -34,7 +34,7 @@ function App() {
             <input className="mb-3 form-control desIn" onChange={event => setMail(event.target.value)} placeholder='Email' required />
           </span>
       <div className="item-list-view">
-          <ItemView test={changeMessage} ItemList={ItemList} />
+          <ItemView refresh={changeMessage} ItemList={ItemList} />
         </div>
     </div>
   );

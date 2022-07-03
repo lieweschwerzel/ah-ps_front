@@ -3,11 +3,12 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackedItem(props) {
+    
     const deleteitemHandler = (email, product_name) => {
         axios.delete(`http://localhost:8000/subs/${email}/${product_name}`)
             .then(res => {
-                console.log("Clicked from Grandchild");
-                props.test();
+                console.log("Clicked from Grandchild  " + res.data);
+                props.refresh();
             })
     }
 
