@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar placeholder="Enter a Book Name..." data={BookData} />
+      <SearchBar placeholder="Enter a product from ah.nl..." data={BookData} />
       <span className="card-text">
             <input className="mb-3 form-control desIn" onChange={event => setMail(event.target.value)} placeholder='Email' required />
           </span>
