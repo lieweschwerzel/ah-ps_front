@@ -29,17 +29,20 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar placeholder="Enter a product from ah.nl..." data={changeMessage} mail={mail} />
+      <span className="input-email-span">
+        <p>Receive an update when bonus is available</p>
+        <label></label>
+        <input className="input-email" onChange={event => setMail(event.target.value)} placeholder='Email' required />
+      </span>
+
+      <SearchBar placeholder="Search and add products to your bonus watchlist..." data={changeMessage} mail={mail} />
 
       {(mail.length > 0) && (
         <div className="item-list-view">
-          <ItemView refresh={changeMessage} ItemList={ItemList}/>
+          <ItemView refresh={changeMessage} ItemList={ItemList} />
         </div>
-        )}
+      )}
 
-      <span className="card-text">
-        <input className="mb-3 form-control desIn" onChange={event => setMail(event.target.value)} placeholder='Email' required />
-      </span>
     </div>
   );
 }

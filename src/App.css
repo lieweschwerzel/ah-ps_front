@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -6,8 +7,10 @@
   align-items: center;
   flex-direction: column;
   font-family: "Nunito", sans-serif;
-  background-image: linear-gradient(90deg, #02a1eb,#389fcf);
+  background-image: linear-gradient(90deg, #02a1eb, #389fcf);
+  position: sticky;
 }
+
 body {
   padding: 0;
   margin: 0;
@@ -16,8 +19,29 @@ body {
 .item-list-view {
   padding-top: 10px;
   background-color: white;
+  border-radius: 2px;
   margin-top: 50px;
   margin-bottom: 50px;
   width: 50vw;
-  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.input-email {
+  background-color: white;
+  border: 0;
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 15px;
+  height: 30px;
+  width: 20vw;
+
+}
+
+.input-email-span p {
+  color: white;
+  margin-top: 50px;
+  font-size: x-large;
 }

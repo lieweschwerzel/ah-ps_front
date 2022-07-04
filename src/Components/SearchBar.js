@@ -7,14 +7,12 @@ import axios from 'axios';
 function SearchBar({ placeholder, data, props, mail }) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
-    console.log(mail)
    
     const handleFilter = (event) => {
         const searchWord = event.target.value;
         setWordEntered(searchWord);
    
         if (searchWord === "" ^ searchWord.length < 3) {
-            console.log("empty or less than 4 chars")
             setFilteredData([]);
         } else {
             axios.get(`http://localhost:8000/search/${searchWord}`)
@@ -25,8 +23,9 @@ function SearchBar({ placeholder, data, props, mail }) {
     }
     
     // Post an item
-    const addItemHandler = (value) => {        
-        axios.post('http://localhost:8000/post', { 'email': mail, 'product_name': value.product_name, 'price': value.price, 'discount': value.discount, 'unit': value.unit,  'img_url': value.img_url })
+    const addItemHandler = (value) => {  
+        if (mail !== ""){
+              axios.post('http://localhost:8000/post', { 'email': mail, 'product_name': value.product_name, 'price': value.price, 'discount': value.discount, 'unit': value.unit,  'img_url': value.img_url })
             .then(res => {
                 console.log("added")
                // console.log(res.data)
@@ -35,6 +34,11 @@ function SearchBar({ placeholder, data, props, mail }) {
             }).catch((err) => {
                 console.warn("error", err.message.body);
               });
+        }
+        else {
+            console.log("not added")
+            setWordEntered("not added")
+        }            
     }
 
     const clearInput = () => {

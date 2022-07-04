@@ -29,7 +29,7 @@ function TrackedItem(props) {
                     <button onClick={() => deleteitemHandler(props.item.email, props.item.product_name)} style={{ border: 'none', backgroundColor: 'white' }}>X</button>
                     <span style={{ fontWeight: 'bold, underline', flex: 1, flexDirection: 'row' }}>
                         <img src={props.item.img_url} alt="ahimage" style={{ height: '25px' }} />
-                        {props.item.product_name} ({props.item.unit}):    €{props.item.price} ({props.item.discount})
+                        {props.item.product_name} ({props.item.unit}):    €{props.item.price} {props.item.discount}
                     </span>
                 </p>
             </div>
