@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar placeholder="Enter a product from ah.nl..." data={BookData} />
+      <SearchBar placeholder="Enter a product from ah.nl..." data={changeMessage} />
 
       <div className="item-list-view">
           <ItemView refresh={changeMessage} ItemList={ItemList} />

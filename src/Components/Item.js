@@ -2,9 +2,8 @@ import axios from 'axios'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function TrackedItem(props) {
-    
+
     const deleteitemHandler = (email, product_name) => {
         axios.delete(`http://localhost:8000/subs/${email}/${product_name}`)
             .then(res => {
@@ -14,12 +13,12 @@ function TrackedItem(props) {
             })
     }
 
-    if (!props.item.email ) {
+    if (!props.item.email) {
         return (
             <div>
                 <p>
                     <span>
-                    </span>                            
+                    </span>
                 </p>
             </div>
         )
@@ -27,12 +26,11 @@ function TrackedItem(props) {
     else {
         return (
             <div>
-                <p> 
-                   <button onClick={() => deleteitemHandler(props.item.email, props.item.product_name)} className="btn btn-outline-danger my-2 mx-2" style={{ borderRadius: '15px'}}>X</button>
-                    <span style={{ fontWeight: 'bold, underline' , flex: 1, flexDirection: 'row'}}>
-                        <img src={props.item.img_url} alt="ahimage" style={{width: '100px', height: '50%'}}/>
-                       
-                    {props.item.product_name}: €</span>{props.item.email}
+                <p>
+                    <button onClick={() => deleteitemHandler(props.item.email, props.item.product_name)} style={{ border: 'none', backgroundColor: 'white' }}>X</button>
+                    <span style={{ fontWeight: 'bold, underline', flex: 1, flexDirection: 'row' }}>
+                        <img src={props.item.img_url} alt="ahimage" style={{ height: '25px' }} />    
+                        {props.item.product_name}: €{props.item.price} ({props.item.discount})</span>
                     
                 </p>
             </div>

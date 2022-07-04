@@ -57,6 +57,12 @@
   .dataItem p {
     margin-left: 10px;
   }
+
+  .dataItem img {
+    margin-right: 0px;
+    margin-left: auto;
+  }
+
   a {
     text-decoration: none;
   }
