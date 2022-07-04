@@ -3,7 +3,6 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackedItem(props) {
-
     const deleteitemHandler = (email, product_name) => {
         axios.delete(`http://localhost:8000/subs/${email}/${product_name}`)
             .then(res => {
@@ -29,9 +28,9 @@ function TrackedItem(props) {
                 <p>
                     <button onClick={() => deleteitemHandler(props.item.email, props.item.product_name)} style={{ border: 'none', backgroundColor: 'white' }}>X</button>
                     <span style={{ fontWeight: 'bold, underline', flex: 1, flexDirection: 'row' }}>
-                        <img src={props.item.img_url} alt="ahimage" style={{ height: '25px' }} />    
-                        {props.item.product_name}: €{props.item.price} ({props.item.discount})</span>
-                    
+                        <img src={props.item.img_url} alt="ahimage" style={{ height: '25px' }} />
+                        {props.item.product_name} ({props.item.unit}):    €{props.item.price} ({props.item.discount})
+                    </span>
                 </p>
             </div>
         )

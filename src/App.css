@@ -19,4 +19,5 @@ body {
   margin-top: 50px;
   margin-bottom: 50px;
   width: 50vw;
+  max-height: 300px;
 }

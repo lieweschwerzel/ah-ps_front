@@ -12,31 +12,34 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [msg, setMsg] = useState(false)
 
-    // Read all items by mail axios.get(`https://price-tracker-back.herokuapp.com/api/item/${mail}`)
-    useEffect(() => {
-      document.title = "AH Price Tracker"
-      if (mail !== '') {
-        axios.get(`http://localhost:8000/subs/${mail}`)
-          .then(res => {
-            setItemList(res.data)
-            console.log(res.data)
-          })
-      }
-    }, [mail, msg]);
+  // Read all items by mail axios.get(`https://price-tracker-back.herokuapp.com/api/item/${mail}`)
+  useEffect(() => {
+    document.title = "AH Price Tracker"
+    if (mail !== '') {
+      axios.get(`http://localhost:8000/subs/${mail}`)
+        .then(res => {
+          setItemList(res.data)
+          console.log(res.data)
+        })
+    }
+  }, [mail, msg]);
 
 
   const changeMessage = () => { msg ? setMsg(false) : setMsg(true) }
 
   return (
     <div className="App">
-      <SearchBar placeholder="Enter a product from ah.nl..." data={changeMessage} />
+      <SearchBar placeholder="Enter a product from ah.nl..." data={changeMessage} mail={mail} />
 
-      <div className="item-list-view">
-          <ItemView refresh={changeMessage} ItemList={ItemList} />
+      {(mail.length > 0) && (
+        <div className="item-list-view">
+          <ItemView refresh={changeMessage} ItemList={ItemList}/>
         </div>
-          <span className="card-text">
-            <input className="mb-3 form-control desIn" onChange={event => setMail(event.target.value)} placeholder='Email' required />
-          </span>
+        )}
+
+      <span className="card-text">
+        <input className="mb-3 form-control desIn" onChange={event => setMail(event.target.value)} placeholder='Email' required />
+      </span>
     </div>
   );
 }

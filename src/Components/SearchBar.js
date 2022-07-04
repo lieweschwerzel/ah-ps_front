@@ -4,10 +4,10 @@ import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import axios from 'axios';
 
-function SearchBar({ placeholder, data, props }) {
+function SearchBar({ placeholder, data, props, mail }) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
-
+    console.log(mail)
    
     const handleFilter = (event) => {
         const searchWord = event.target.value;
@@ -26,13 +26,15 @@ function SearchBar({ placeholder, data, props }) {
     
     // Post an item
     const addItemHandler = (value) => {        
-        axios.post('http://localhost:8000/post', { 'email': "liewe", 'product_name': value.product_name, 'price': value.price, 'discount': value.discount, 'unit': value.unit,  'img_url': value.img_url })
+        axios.post('http://localhost:8000/post', { 'email': mail, 'product_name': value.product_name, 'price': value.price, 'discount': value.discount, 'unit': value.unit,  'img_url': value.img_url })
             .then(res => {
                 console.log("added")
                // console.log(res.data)
                 data()
                 clearInput()
-            })
+            }).catch((err) => {
+                console.warn("error", err.message.body);
+              });
     }
 
     const clearInput = () => {
@@ -62,7 +64,7 @@ function SearchBar({ placeholder, data, props }) {
                     {filteredData.slice(0, 15).map((value, key) => {
                         return (
                             <a className="dataItem" onClick={() => addItemHandler(value)}>
-                                <p>{value.product_name} {value.price} {value.unit}<img src={value.img_url} alt="img" style={{ width: '10%', height: '10%' }}></img> </p>
+                                <p>{value.product_name} {value.price} {value.unit}<img src={value.img_url} alt="img" style={{ width: '8%', height: '8%' }}></img> </p>
                                 
                             </a>
                         );
