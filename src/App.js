@@ -18,7 +18,7 @@ function App() {
     if (mail !== '') {
       axios.get(`http://localhost:8000/subs/${mail}`)
         .then(res => {
-          setItemList(res.data)
+          setItemList(res.data.reverse())
           console.log(res.data)
         })
     }
@@ -29,20 +29,28 @@ function App() {
 
   return (
     <div className="App">
-      <span className="input-email-span">
-        <p>Receive an update when bonus is available</p>
-        <label></label>
-        <input className="input-email" onChange={event => setMail(event.target.value)} placeholder='Email' required />
-      </span>
+      <div className='left-content'>
+        <span className="input-email-span">
+          <label>Create or edit your watchlist </label>
+          <input className="input-email" onChange={event => setMail(event.target.value)} placeholder='your email address' required />
+          <p>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            Never miss an offer at ah.nl.
+            <br></br> <br></br>
+            When a product on your list is <br></br>
+            on offer, we'll notify you by email.
+          </p>
+        </span>
+      </div>
+      <div className='main-content'>
+        <SearchBar className='search-bar' placeholder="Search and add products to your bonus watchlist..." data={changeMessage} mail={mail} />
 
-      <SearchBar placeholder="Search and add products to your bonus watchlist..." data={changeMessage} mail={mail} />
-
-      {(mail.length > 0) && (
-        <div className="item-list-view">
-          <ItemView refresh={changeMessage} ItemList={ItemList} />
-        </div>
-      )}
-
+        {(mail.length > 0) && (
+          <div className="item-list-view">
+            <ItemView refresh={changeMessage} ItemList={ItemList} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -24,14 +24,17 @@ function TrackedItem(props) {
     }
     else {
         return (
-            <div>
-                <p>
-                    <button onClick={() => deleteitemHandler(props.item.email, props.item.product_name)} style={{ border: 'none', backgroundColor: 'white' }}>X</button>
-                    <span style={{ fontWeight: 'bold, underline', flex: 1, flexDirection: 'row' }}>
-                        <img src={props.item.img_url} alt="ahimage" style={{ height: '25px' }} />
-                        {props.item.product_name} ({props.item.unit}):    €{props.item.price} {props.item.discount}
-                    </span>
-                </p>
+            
+            <div><br></br>
+                <div>
+                    <div className='item-wrapper'>
+                        <img className='item-img' src={props.item.img_url} alt="ahimage" />
+                        <div className='item-product-name'>{props.item.product_name} ({props.item.unit})</div>
+                        <div className='item-price'>{props.item.price} </div>
+                        <div className='item-discount'>{props.item.discount} </div>
+                        <button className='item-delete' onClick={() => deleteitemHandler(props.item.email, props.item.product_name)}>X</button>
+                    </div>
+                </div>
             </div>
         )
     }
