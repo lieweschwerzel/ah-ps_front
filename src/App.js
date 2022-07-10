@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     document.title = "AH Price Tracker"
     if (mail !== '') {
-      axios.get(`http://localhost:8000/subs/${mail}`)
+      axios.get(`http://localhost:8080/subs/${mail}`)
         .then(res => {
           setItemList(res.data.reverse())
           console.log(res.data)

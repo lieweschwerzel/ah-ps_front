@@ -3,8 +3,8 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackedItem(props) {
-    const deleteitemHandler = (email, product_name) => {
-        axios.delete(`http://localhost:8000/subs/${email}/${product_name}`)
+    const deleteitemHandler = (id) => {
+        axios.delete(`http://localhost:8080/subs/delete/${id}`)
             .then(res => {
                 console.log("Clicked from Grandchild  " + res.data);
                 //call refresh in app.js to refresh page on msg to true or false
@@ -32,7 +32,7 @@ function TrackedItem(props) {
                         <div className='item-product-name'>{props.item.product_name} ({props.item.unit})</div>
                         <div className='item-price'>{props.item.price} </div>
                         <div className='item-discount'>{props.item.discount} </div>
-                        <button className='item-delete' onClick={() => deleteitemHandler(props.item.email, props.item.product_name)}>X</button>
+                        <button className='item-delete' onClick={() => deleteitemHandler(props.item.id)}>X</button>
                     </div>
                 </div>
             </div>
