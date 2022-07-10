@@ -3,6 +3,9 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackedItem(props) {
+
+    console.log(props.item.img_url)
+
     const deleteitemHandler = (id) => {
         axios.delete(`http://localhost:8080/subs/delete/${id}`)
             .then(res => {

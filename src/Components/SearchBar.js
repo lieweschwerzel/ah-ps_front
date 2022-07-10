@@ -15,7 +15,7 @@ function SearchBar({ placeholder, data, props, mail }) {
         if (searchWord === "" ^ searchWord.length < 3) {
             setFilteredData([]);
         } else {
-            axios.get(`http://localhost:8000/search/${searchWord}`)
+            axios.get(`http://localhost:8080/prods/search/${searchWord}`)
                 .then(res => {
                     setFilteredData(res.data)
                 })
@@ -25,7 +25,7 @@ function SearchBar({ placeholder, data, props, mail }) {
     // Post an item
     const addItemHandler = (value) => {  
         if (mail !== ""){
-              axios.post('http://localhost:8000/post', { 'email': mail, 'product_name': value.product_name, 'price': value.price, 'discount': value.discount, 'unit': value.unit,  'img_url': value.img_url })
+              axios.post('http://localhost:8000/post', { 'email': mail, 'product_name': value.productName, 'price': value.price, 'discount': value.discount, 'unit': value.unit,  'img_url': value.imgUrl })
             .then(res => {
                 console.log("added")
                // console.log(res.data)
@@ -68,7 +68,7 @@ function SearchBar({ placeholder, data, props, mail }) {
                     {filteredData.slice(0, 15).map((value, key) => {
                         return (
                             <a className="dataItem" onClick={() => addItemHandler(value)}>
-                                <p>{value.product_name} {value.price} {value.unit}<img src={value.img_url} alt="img" style={{ width: '8%', height: '8%' }}></img> </p>
+                                <p>{value.productName} {value.price} {value.unit}<img src={value.imgUrl} alt="img" style={{ width: '8%', height: '8%' }}></img> </p>
                                 
                             </a>
                         );
