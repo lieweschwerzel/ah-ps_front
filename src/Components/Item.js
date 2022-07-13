@@ -3,14 +3,13 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackedItem(props) {
-
-    console.log(props.item.img_url)
-
     const deleteitemHandler = (id) => {
-        axios.delete(`http://localhost:8080/subs/delete/${id}`)
+        console.log(id);
+        axios.delete(`https://ah-ps-spring-boot.herokuapp.com/subs/delete/${id}`)
             .then(res => {
                 console.log("Clicked from Grandchild  " + res.data);
                 //call refresh in app.js to refresh page on msg to true or false
+                
                 props.refresh();
             })
     }
@@ -31,8 +30,8 @@ function TrackedItem(props) {
             <div><br></br>
                 <div>
                     <div className='item-wrapper'>
-                        <img className='item-img' src={props.item.img_url} alt="ahimage" />
-                        <div className='item-product-name'>{props.item.product_name} ({props.item.unit})</div>
+                        <img className='item-img' src={props.item.imgUrl} alt="ahimage" />
+                        <div className='item-product-name'>{props.item.productName} ({props.item.unit})</div>
                         <div className='item-price'>{props.item.price} </div>
                         <div className='item-discount'>{props.item.discount} </div>
                         <button className='item-delete' onClick={() => deleteitemHandler(props.item.id)}>X</button>

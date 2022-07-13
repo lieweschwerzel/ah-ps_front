@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./App.css";
 import SearchBar from "./Components/SearchBar";
-import BookData from "./Data.json";
 import ItemView from './Components/ItemListView';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,7 +15,7 @@ function App() {
   useEffect(() => {
     document.title = "AH Price Tracker"
     if (mail !== '') {
-      axios.get(`http://localhost:8080/subs/${mail}`)
+      axios.get(`https://ah-ps-spring-boot.herokuapp.com/subs/${mail}`)
         .then(res => {
           setItemList(res.data.reverse())
           console.log(res.data)

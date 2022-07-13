@@ -7,38 +7,41 @@ import axios from 'axios';
 function SearchBar({ placeholder, data, props, mail }) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
-   
+
     const handleFilter = (event) => {
         const searchWord = event.target.value;
         setWordEntered(searchWord);
-   
+
         if (searchWord === "" ^ searchWord.length < 3) {
             setFilteredData([]);
         } else {
-            axios.get(`http://localhost:8080/prods/search/${searchWord}`)
+            axios.get(`https://ah-ps-spring-boot.herokuapp.com/prods/search/${searchWord}`)
                 .then(res => {
                     setFilteredData(res.data)
-                })
+                }) 
         };
     }
-    
+
     // Post an item
-    const addItemHandler = (value) => {  
-        if (mail !== ""){
-              axios.post('http://localhost:8000/post', { 'email': mail, 'product_name': value.productName, 'price': value.price, 'discount': value.discount, 'unit': value.unit,  'img_url': value.imgUrl })
-            .then(res => {
-                console.log("added")
-               // console.log(res.data)
-                data()
-                clearInput()
-            }).catch((err) => {
-                console.warn("error", err.message.body);
-              });
+    const addItemHandler = (value) => {
+        if (mail !== "") {
+            axios.post('https://ah-ps-spring-boot.herokuapp.com/subs/post', {
+                'email': mail, 'productName': value.productName,
+                'price': value.price, 'unit': value.unit, 'discount': value.discount, 'imgUrl': value.imgUrl
+            })
+                .then(res => {
+                    console.log("added")
+                    console.log(res.data)
+                    data()
+                    clearInput()
+                }).catch((err) => {
+                    console.warn("error", err.message.body);
+                });
         }
         else {
             console.log("not added")
             setWordEntered("not added")
-        }            
+        }
     }
 
     const clearInput = () => {
@@ -69,7 +72,7 @@ function SearchBar({ placeholder, data, props, mail }) {
                         return (
                             <a className="dataItem" onClick={() => addItemHandler(value)}>
                                 <p>{value.productName} {value.price} {value.unit}<img src={value.imgUrl} alt="img" style={{ width: '8%', height: '8%' }}></img> </p>
-                                
+
                             </a>
                         );
                     })}
