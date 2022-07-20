@@ -3,9 +3,10 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackedItem(props) {
+    const url = `https://ah-ps-spring-boot.herokuapp.com` ; //`http://localhost:8080`
     const deleteitemHandler = (id) => {
         console.log(id);
-        axios.delete(`https://ah-ps-spring-boot.herokuapp.com/subs/delete/${id}`)
+        axios.delete(url+`/subs/delete/${id}`)
             .then(res => {
                 console.log("Clicked from Grandchild  " + res.data);
                 //call refresh in app.js to refresh page on msg to true or false
