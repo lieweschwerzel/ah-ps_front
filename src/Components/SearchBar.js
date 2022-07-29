@@ -7,8 +7,8 @@ import axios from 'axios';
 function SearchBar({ placeholder, data, props, mail }) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
-    const url = `https://ah-ps-spring-boot.herokuapp.com`; //`http://localhost:8080`
-
+    const urlGet = `https://www.ah.nl/features/api/global-search?query=${searchWord}&limit=15`; //`http://localhost:8080`
+    const urlPost = `https://ah-ps-spring-boot.herokuapp.com/subs/post`
     const handleFilter = (event) => {
         const searchWord = event.target.value;
         setWordEntered(searchWord);
@@ -16,8 +16,9 @@ function SearchBar({ placeholder, data, props, mail }) {
         if (searchWord === "" ^ searchWord.length < 3) {
             setFilteredData([]);
         } else {
-            axios.get(url + `/prods/search/${searchWord}`)
+            axios.get(urlGet)
                 .then(res => {
+                    console.log(res.data)
                     setFilteredData(res.data)
                 }) 
         };
@@ -26,7 +27,7 @@ function SearchBar({ placeholder, data, props, mail }) {
     // Post an item
     const addItemHandler = (value) => {
         if (mail !== "") {
-            axios.post(url +`/subs/post`, {
+            axios.post(urlPost, {
                 'email': mail, 'productName': value.productName,
                 'price': value.price, 'unit': value.unit, 'discount': value.discount, 'imgUrl': value.imgUrl
             })
