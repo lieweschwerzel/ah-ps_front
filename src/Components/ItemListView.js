@@ -6,7 +6,7 @@ export default function ItemView(props) {
     return (
         <div >
             <ul>
-                {props.ItemList.map(item => <TrackedItem item={item} mail={props.mail} refresh={props.refresh} />)}
+                {props.ItemList.map((item, key) => <TrackedItem item={item} mail={props.mail} refresh={props.refresh} />)}
             </ul>
         </div>
     )

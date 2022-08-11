@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [ItemList, setItemList] = useState([{}])
   const [mail, setMail] = useState('')
+  const [date, setDate] = useState('')
   const [loading, setLoading] = useState(false)
   const [msg, setMsg] = useState(false)
   const url = `https://ah-ps-spring-boot.herokuapp.com`; //`http://localhost:8080`
@@ -16,13 +17,22 @@ function App() {
   useEffect(() => {
     document.title = "AH Price Tracker"
     if (mail !== '') {
-      axios.get(url+`/subs/email/${mail}`)
+      axios.get(url + `/subs/email/${mail}`)
         .then(res => {
           setItemList(res.data.reverse())
           console.log(res.data)
         })
     }
   }, [mail, msg]);
+
+  useEffect(() => {
+    axios.get(url + `/prods/search/datum`)
+      .then(res => {
+        setDate(res.data)
+        console.log(date[0].unit);
+      })
+  }, []);
+
 
 
   const changeMessage = () => { msg ? setMsg(false) : setMsg(true) }
@@ -40,7 +50,18 @@ function App() {
             When a product on your list is <br></br>
             on offer, we'll notify you by email.
           </p>
+          {date.length !== 0 ? (
+            <p>db last updated: {date[0].unit}</p>
+            ) : (
+            <p>db last updated:</p>
+          )
+          }
+          
         </span>
+      </div>
+      <div className="datum">
+        
+        
       </div>
       <div className='main-content'>
         <SearchBar className='search-bar' placeholder="Search and add products to your bonus watchlist..." data={changeMessage} mail={mail} />
