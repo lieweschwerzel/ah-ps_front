@@ -29,7 +29,6 @@ function App() {
     axios.get(url + `/prods/search/datum`)
       .then(res => {
         setDate(res.data)
-        console.log(date[0].unit);
       })
   }, []);
 
