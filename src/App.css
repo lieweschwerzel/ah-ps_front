@@ -2,7 +2,7 @@
 
 .App {
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   display: flex;
   font-family: "Nunito", sans-serif;
   background-image: linear-gradient(90deg, #02a1eb, #389fcf);
@@ -16,13 +16,14 @@ body {
 }
 
 .main-content {
+  width: 30vw;
   margin-left: 30px;
   flex: 7;
   align-items: center;
 }
 
 .left-content {
-  margin-top: 200px;
+  margin-top: 22px;
   margin-left: 30px;
   /* border: 1px solid black; */
 }
@@ -42,18 +43,17 @@ body {
 .input-email {
   background-color: white;
   margin-top: 10px;
-  border: 0;
+  border: 2px black;
   border-radius: 2px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   font-size: 18px;
   padding: 5px;
-  height: 25px;
+  height: 30px;
   width: 200px;
 }
 
 .input-email-span label {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   color: white;
@@ -66,13 +66,17 @@ body {
   color: white;
 }
 
+.item-list-view {
+  width: 60vw;
+}
+
 
 .item-wrapper {
   display: flex;
   flex-direction: row;
   align-items: left;
   gap: 10px;
-  border-bottom: 1px solid #02a1eb ;
+  border-bottom: 1px solid #02a1eb;
 }
 
 .item-wrapper button {
@@ -106,11 +110,60 @@ body {
 @media (max-width: 600px) {
 
 
-  body {
-    background-color: #02a1eb;
+  body {}
+
+  .App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Nunito", sans-serif;
+    background-image: linear-gradient(90deg, #02a1eb, #389fcf);
+    gap: 1px;
+    align-items: center;    
   }
 
-  .item-list-view {
+
+  .main-content {
     width: 90vw;
+    margin-left: 0px;
+  }
+
+  .left-content {
+    margin-top: 2px;
+    margin-left: 5px;
+  }
+
+  
+  .input-email-span label {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 50px;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .input-email {
+    background-color: white;
+    margin-top: 10px;
+    font-size: 1em;
+    padding: 5px;
+    width: 60vw;
+    height: 30px;
+  }
+
+ 
+
+  .item-list-view {
+    /* border: 1px solid black; */
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 90vw;
+    max-height: 70vh;
+    overflow: hidden;
+    overflow-y: auto;
   }
 }

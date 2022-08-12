@@ -43,10 +43,10 @@ function App() {
           <label>Create or edit your watchlist </label>
           <input className="input-email" onChange={event => setMail(event.target.value)} placeholder='your email address' required />
           <p>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             Never miss an offer at ah.nl.
             <br></br> <br></br>
-            When a product on your list is <br></br>
+            When a product on your list is 
+            <br></br>
             on offer, we'll notify you by email.
           </p>
           {date.length !== 0 ? (
@@ -63,7 +63,7 @@ function App() {
         
       </div>
       <div className='main-content'>
-        <SearchBar className='search-bar' placeholder="Search and add products to your bonus watchlist..." data={changeMessage} mail={mail} />
+        <SearchBar className='search-bar' placeholder="Search and add products..." data={changeMessage} mail={mail} />
 
         {(mail.length > 0) && (
           <div className="item-list-view">
