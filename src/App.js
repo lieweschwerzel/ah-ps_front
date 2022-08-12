@@ -41,7 +41,7 @@ function App() {
       <div className='left-content'>
         <span className="input-email-span">
           <label>Create or edit your watchlist </label>
-          <input className="input-email" onChange={event => setMail(event.target.value)} placeholder='your email address' required />
+          <input className="input-email" onChange={event => setMail(event.target.value.toLowerCase())} placeholder='your email address' required />
           <p>
             Never miss an offer at ah.nl.
             <br></br> <br></br>
