@@ -44,12 +44,16 @@ input:focus {
 }
 
 .dataResult::-webkit-scrollbar {
-  display: rgb(152, 61, 61);
+  display:inline;
+}
+
+.dataResult::-webkit-scrollbar-thumb {
+  background: rgb(3, 163, 238, 0.6);
 }
 
 /* Track */
 .dataResult::-webkit-scrollbar-track {
-  background: rgb(152, 61, 61);
+  background: white;
 }
 
 .dataResult .dataItem {
