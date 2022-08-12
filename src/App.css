@@ -2,15 +2,16 @@
 
 .App {
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   display: flex;
   font-family: "Nunito", sans-serif;
-  background-image: linear-gradient(90deg, #02a1eb, #389fcf);
+  
   position: sticky;
   gap: 20px;
 }
 
 body {
+  background-image: linear-gradient(90deg, #02a1eb, #389fcf);
   padding: 0;
   margin: 0;
 }
