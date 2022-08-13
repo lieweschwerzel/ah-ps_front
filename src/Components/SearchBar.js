@@ -26,7 +26,6 @@ function SearchBar({ placeholder, data, props, mail }) {
     // Post an item
     const addItemHandler = (value) => {
         if (mail !== "") {
-            console.log(value.productId)
             axios.post(url +`/subs/post`, {
                 'email': mail, 'productName': value.productName,
                 'price': value.price, 'unit': value.unit, 'discount': value.discount, 'imgUrl': value.imgUrl, 'productId': value.productId
