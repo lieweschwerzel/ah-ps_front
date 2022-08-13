@@ -11,7 +11,7 @@ function App() {
   const [date, setDate] = useState('')
   const [loading, setLoading] = useState(false)
   const [msg, setMsg] = useState(false)
-  const url = `https://ah-ps-spring-boot.herokuapp.com`; //`http://localhost:8080`
+  const url = `https://ahbonus.herokuapp.com`; //`http://localhost:8080`
 
   // Read all items by mail axios.get(`https://price-tracker-back.herokuapp.com/api/item/${mail}`)
   useEffect(() => {
