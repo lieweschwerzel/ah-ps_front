@@ -72,7 +72,7 @@ function SearchBar({ placeholder, data, props, mail }) {
                     {filteredData.slice(0, 20).map((value, key) => {
                         return (
                             <a className="dataItem" onClick={() => addItemHandler(value)}>
-                                <p><img src={value.imgUrl} alt="img" style={{ width: '5%', height: '5%' }}></img> {value.productName} €{value.price}   ({value.unit}) ({value.discount})</p>
+                                <p><img src={value.imgUrl} alt="img" style={{ width: '5%', height: '5%' }}></img> {value.productName} €{value.price}   ({value.unit}) {value.discount}</p>
 
                             </a>
                         );
