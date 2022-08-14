@@ -84,6 +84,19 @@ body {
   width: 60vw;
 }
 
+.item-list-view::-webkit-scrollbar {
+  display:inline;
+}
+
+.item-list-view::-webkit-scrollbar-thumb {
+  background: rgb(3, 163, 238, 0.6);
+}
+
+/* Track */
+.dataResult::-webkit-scrollbar-track {
+  background: white;
+}
+
 
 .item-wrapper {
   display: flex;
@@ -208,18 +221,7 @@ body {
     overflow-y: auto;
   }
 
-  .item-list-view::-webkit-scrollbar {
-    display:inline;
-  }
-  
-  .item-list-view::-webkit-scrollbar-thumb {
-    background: rgb(3, 163, 238, 0.6);
-  }
-  
-  /* Track */
-  .item-list-view::-webkit-scrollbar-track {
-    background: white;
-  }
+
 
   .footer-wrapper  {
     width: 80vw;
