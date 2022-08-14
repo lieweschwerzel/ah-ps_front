@@ -64,7 +64,7 @@ body {
   font-size: 18px;
   padding: 5px;
   height: 30px;
-  width: 200px;
+  width: 90%;
 }
 
 .input-email-span label {
@@ -206,6 +206,19 @@ body {
     max-height: 70vh;
     overflow: hidden;
     overflow-y: auto;
+  }
+
+  .item-list-view::-webkit-scrollbar {
+    display:inline;
+  }
+  
+  .item-list-view::-webkit-scrollbar-thumb {
+    background: rgb(3, 163, 238, 0.6);
+  }
+  
+  /* Track */
+  .item-list-view::-webkit-scrollbar-track {
+    background: white;
   }
 
   .footer-wrapper  {
