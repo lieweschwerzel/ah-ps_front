@@ -16,6 +16,7 @@ body {
 }
 
 .top {
+  margin-top: 5px;
   width: 150px;
 }
 
@@ -135,6 +136,15 @@ body {
     align-items: center;    
   }
 
+  .top {
+    width: 20vw;
+  }
+
+  .top h1 h1 {
+    width: 110px;
+    padding-left: 2px;
+  }
+
 
   .main-content {
     width: 90vw;
@@ -154,7 +164,7 @@ body {
     display: flex;
     flex-direction: column;    
     color: white;
-    margin-top: 2px;
+    margin-top: 5px;
     font-size: large;
     font-weight: bold;
     

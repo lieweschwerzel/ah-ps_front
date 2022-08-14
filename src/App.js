@@ -38,9 +38,9 @@ function App() {
 
   return (
     <div className="App">
-     
+
       <div className='left-content'>
-      <div className='top'><h1>AHA <h1> BONUS</h1> NIET GEMIST</h1></div>
+        <div className='top'><h1>AHA <h1> BONUS</h1> NIET GEMIST</h1></div>
 
         <span className="input-email-span">
           <label>Create or edit your watchlist </label>
@@ -48,17 +48,16 @@ function App() {
           <p>
             Never miss an offer at ah.nl.
             <br></br> <br></br>
-            When a product on your list is 
-            <br></br>
-            on offer, we'll notify you by email.
+            When a product on your list is
+            on <br></br>offer, we'll notify you by email.
           </p>
-          
-          
+
+
         </span>
       </div>
       <div className="datum">
-        
-        
+
+
       </div>
       <div className='main-content'>
         <SearchBar className='search-bar' placeholder="Search and add products..." data={changeMessage} mail={mail} />
@@ -66,15 +65,18 @@ function App() {
         {(mail.length > 0) && (
           <div className="item-list-view">
             <ItemView refresh={changeMessage} ItemList={ItemList} />
-            
+
           </div>
         )}
-        {date.length !== 0 ? (
+        <div className='footer'>
+          {date.length !== 0 ? (
             <p>db last updated: {date[0].unit}</p>
-            ) : (
+          ) : (
             <p>db last updated:</p>
           )
           }
+        </div>
+
       </div>
     </div>
   );
