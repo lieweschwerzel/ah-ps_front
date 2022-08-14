@@ -38,7 +38,10 @@ function App() {
 
   return (
     <div className="App">
+     
       <div className='left-content'>
+      <div className='top'><h1>AHA <h1> BONUS</h1> NIET GEMIST</h1></div>
+
         <span className="input-email-span">
           <label>Create or edit your watchlist </label>
           <input className="input-email" onChange={event => setMail(event.target.value.toLowerCase())} placeholder='your email address' required />
@@ -49,12 +52,7 @@ function App() {
             <br></br>
             on offer, we'll notify you by email.
           </p>
-          {date.length !== 0 ? (
-            <p>db last updated: {date[0].unit}</p>
-            ) : (
-            <p>db last updated:</p>
-          )
-          }
+          
           
         </span>
       </div>
@@ -68,8 +66,15 @@ function App() {
         {(mail.length > 0) && (
           <div className="item-list-view">
             <ItemView refresh={changeMessage} ItemList={ItemList} />
+            
           </div>
         )}
+        {date.length !== 0 ? (
+            <p>db last updated: {date[0].unit}</p>
+            ) : (
+            <p>db last updated:</p>
+          )
+          }
       </div>
     </div>
   );
