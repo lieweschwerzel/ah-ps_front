@@ -15,7 +15,7 @@ function App() {
 
   // Read all items by mail axios.get(`https://price-tracker-back.herokuapp.com/api/item/${mail}`)
   useEffect(() => {
-    document.title = "AH Price Tracker"
+    document.title = "AHA Bonus NIET gemist"
     if (mail !== '') {
       axios.get(url + `/subs/email/${mail}`)
         .then(res => {
@@ -29,6 +29,8 @@ function App() {
     axios.get(url + `/prods/search/datum`)
       .then(res => {
         setDate(res.data)
+        const l = date.length-1
+        console.log(date[0])
       })
   }, []);
 
@@ -49,7 +51,7 @@ function App() {
             Never miss an offer at ah.nl.
             <br></br> <br></br>
             When a product on your list is
-            on <br></br>offer, we'll notify you by email.
+            on offer, we'll notify you by email.
           </p>
 
 
@@ -68,14 +70,18 @@ function App() {
 
           </div>
         )}
-        <div className='footer'>
-          {date.length !== 0 ? (
-            <p>db last updated: {date[0].unit}</p>
-          ) : (
-            <p>db last updated:</p>
-          )
-          }
+        <div className='footer-wrapper'>
+          <div className='date'>
+            {date.length !== 0 ? (
+              <p>db last updated: {date[0].unit}</p>
+            ) : (
+              <p>db last updated:</p>
+              
+            )
+            }
+          </div>
         </div>
+
 
       </div>
     </div>
