@@ -190,9 +190,9 @@ body {
   text-decoration: none;
 }
 
-.item-wrapper a:hover {
+/* .item-wrapper a:hover {
   font-weight: 600;
-}
+} */
 
 .item-wrapper a:visited {
   color: black;
