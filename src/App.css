@@ -254,7 +254,7 @@ body {
   }
   
   .logged-in-wrapper {
-    margin-top: 0;
+    margin-top: 5px;
     width: auto;
   }
 
@@ -275,7 +275,7 @@ body {
   }
 
   @media (max-width: 400px) {
-   
+ 
   }
  
 }
