@@ -77,9 +77,9 @@ input:focus {
   text-decoration: none;
 }
 
-.dataResult a:hover {
+/* .dataResult a:hover {
   font-size: large;
-}
+} */
 
 a:hover {
   cursor: pointer;
