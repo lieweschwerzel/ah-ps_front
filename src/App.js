@@ -53,18 +53,16 @@ function App() {
 
       <div className='left-content'>
         <div className='top'><h1>AHA <h1> BONUS</h1> NIET GEMIST</h1></div>
-        <span >
           <p className='slogan'>Never miss an offer at ah.nl.</p>
           <br></br> <br></br>
-        </span>
       </div>
 
       <div className='main-content'>
         {(mail.length < 1) && (
           <span className='input-email-wrapper'>
             <form onSubmit={handleSubmit}>
-              <p for="email">Enter your email:</p>
-              <input type="email" id="email" name="email" onChange={(e) => setTmpMail(e.target.value)} value={tmpmail}></input>
+              <p for="email" ></p>
+              <input type="email" id="email" name="email" onChange={(e) => setTmpMail(e.target.value)} placeholder="Enter your email"></input>
               <button type='submit'>Login</button>
             </form>
             {/* <input type="email" id="email" name="email" required></input>
@@ -72,8 +70,8 @@ function App() {
           </span>
         )}
         {(mail.length > 0) && (
-          <div>
-            <p>email is {mail}</p>
+          <div className='logged-in-wrapper'>
+            <p>{mail}</p>
             <button onClick={(e) => setMail('')}>X</button>
           </div>
 
