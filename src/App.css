@@ -159,6 +159,7 @@ body {
 .item-product-name {
   flex: 1;
   text-align: left;
+  font-size: medium;
 }
 
 
@@ -168,7 +169,20 @@ body {
 }
 
 .item-price {
-  font-size: sm;
+  flex: 0.1;
+  font-size: medium;
+}
+
+.item-discount {
+  flex: 0.3;
+  color: rgb(255, 69, 2);
+  font-weight: bold;
+}
+
+.item-img {
+  flex: 0.5;
+  max-height: 35px;
+  max-width: 35px;
 }
 
 .item-wrapper a:link {
@@ -184,22 +198,6 @@ body {
   color: black;
 }
 
-.item-price {
-  flex: 0.1;
-  font-size: small;
-}
-
-.item-discount {
-  flex: 0.3;
-  color: rgb(255, 69, 2);
-  font-weight: bold;
-}
-
-.item-img {
-  flex: 0.5;
-  max-height: 35px;
-  max-width: 35px;
-}
 
 .footer-wrapper  {
   color: white;
