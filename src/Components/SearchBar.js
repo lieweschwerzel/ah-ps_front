@@ -28,7 +28,9 @@ function SearchBar({ placeholder, data, props, mail }) {
         if (mail !== "") {
             axios.post(url +`/subs/post`, {
                 'email': mail, 'productName': value.productName,
-                'price': value.price, 'unit': value.unit, 'discount': value.discount, 'imgUrl': value.imgUrl, 'productId': value.productId
+                'price': value.price, 'unit': value.unit, 'discount': value.discount, 
+                'imgUrl': value.imgUrl, 'productId': value.productId,
+                'productUrl': value.productUrl
             })
                 .then(res => {
                     console.log("added")

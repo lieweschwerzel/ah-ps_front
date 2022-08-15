@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [ItemList, setItemList] = useState([{}])
   const [mail, setMail] = useState('')
+  const [tmpmail, setTmpMail] = useState('')
   const [date, setDate] = useState('')
   const [loading, setLoading] = useState(false)
   const [msg, setMsg] = useState(false)
@@ -23,16 +24,25 @@ function App() {
           console.log(res.data)
         })
     }
-  }, [mail, msg]);
+  }, [msg]);
 
   useEffect(() => {
     axios.get(url + `/prods/search/datum`)
       .then(res => {
         setDate(res.data)
-        const l = date.length-1
+        const l = date.length - 1
         console.log(date[0])
       })
   }, []);
+
+  const handleSubmit = (e) => {
+    setMail(tmpmail)
+    msg ? setMsg(false) : setMsg(true)
+    e.preventDefault();
+
+    console.log(`Form submitted, ${mail}`);
+
+  }
 
 
 
@@ -43,25 +53,32 @@ function App() {
 
       <div className='left-content'>
         <div className='top'><h1>AHA <h1> BONUS</h1> NIET GEMIST</h1></div>
-
-        <span className="input-email-span">
-          <label>Create or edit your watchlist </label>
-          <input className="input-email" onChange={event => setMail(event.target.value.toLowerCase())} placeholder='your email address' required />
-          <p>
-            Never miss an offer at ah.nl.
-            <br></br> <br></br>
-            When a product on your list is
-            on offer, we'll notify you by email.
-          </p>
-
-
+        <span >
+          <p className='slogan'>Never miss an offer at ah.nl.</p>
+          <br></br> <br></br>
         </span>
       </div>
-      <div className="datum">
 
-
-      </div>
       <div className='main-content'>
+        {(mail.length < 1) && (
+          <span className='input-email-wrapper'>
+            <form onSubmit={handleSubmit}>
+              <p for="email">Enter your email:</p>
+              <input type="email" id="email" name="email" onChange={(e) => setTmpMail(e.target.value)} value={tmpmail}></input>
+              <button type='submit'>Login</button>
+            </form>
+            {/* <input type="email" id="email" name="email" required></input>
+          <input type="button" id='button' onClick={event => setMail(event.target.value.toLowerCase())} value="Login" /> */}
+          </span>
+        )}
+        {(mail.length > 0) && (
+          <div>
+            <p>email is {mail}</p>
+            <button onClick={(e) => setMail('')}>X</button>
+          </div>
+
+        )}
+
         <SearchBar className='search-bar' placeholder="Search and add products..." data={changeMessage} mail={mail} />
 
         {(mail.length > 0) && (
@@ -76,7 +93,7 @@ function App() {
               <p>db last updated: {date[0].unit}</p>
             ) : (
               <p>db last updated:</p>
-              
+
             )
             }
           </div>

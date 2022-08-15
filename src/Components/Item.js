@@ -32,7 +32,7 @@ function TrackedItem(props) {
                 <div>
                     <div className='item-wrapper'>
                         <img className='item-img' src={props.item.imgUrl} alt="ahimage" />
-                        <div className='item-product-name'>{props.item.productName} ({props.item.unit})</div>
+                        <a  href={props.item.productUrl} target="_blank"  rel="noreferrer" className='item-product-name'>{props.item.productName} ({props.item.unit})</a>
                         <div className='item-price'>€{props.item.price} </div>
                         <div className='item-discount'>{props.item.discount} </div>
                         <button className='item-delete' onClick={() => deleteitemHandler(props.item.id)}>X</button>

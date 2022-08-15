@@ -15,6 +15,27 @@ body {
   margin: 0;
 }
 
+.main-content {
+  width: 50vw;
+  margin-left: 30px;
+  flex: 7;
+  align-items: center;
+}
+
+.main-content label {
+  color: white;
+  margin-top: 40px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.left-content {
+  margin-top: 22px;
+  margin-left: 30px;
+  width: 15vw;
+  /* border: 1px solid black; */
+}
+
 .top {
   margin-top: 5px;
   width: 150px;
@@ -27,20 +48,47 @@ body {
   white-space: nowrap;
 }
 
-.main-content {
-  width: 50vw;
-  margin-left: 30px;
-  flex: 7;
-  align-items: center;
-
+.slogan {
+  color: white;
 }
 
-.left-content {
-  margin-top: 22px;
-  margin-left: 30px;
-  width: 15vw;
-  /* border: 1px solid black; */
+
+.input-email-wrapper {
+  margin-top: 10px;
+  border: 2px black;
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 5px;
+  height: 30px;
+  width: 50%;
 }
+
+.input-email-wrapper p {
+  color: white;
+}
+
+.input-email-wrapper input {
+  padding-left: 10px;
+  width: 260px;
+  background-color: white;
+  border-color: #02a1eb;  
+}
+
+.input-email-wrapper input:-webkit-autofill,
+.input-email-wrapper input:-webkit-autofill:hover, 
+.input-email-wrapper input:-webkit-autofill:focus, 
+.input-email-wrapper input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.input-email-wrapper button {
+  background-color: #eb8602;
+  color: white;
+  border-color: white;
+}
+
 
 .item-list-view {
   /* border: 1px solid black; */
@@ -54,27 +102,8 @@ body {
   overflow-y: auto;
 }
 
-.input-email {
-  background-color: white;
-  margin-top: 10px;
-  border: 2px black;
-  border-radius: 2px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  font-size: 18px;
-  padding: 5px;
-  height: 30px;
-  width: 90%;
-}
 
-.input-email-span label {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  margin-top: 40px;
-  font-size: large;
-  font-weight: bold;
-}
+
 
 .input-email-span p {
   color: white;
@@ -159,7 +188,7 @@ body {
     flex-direction: column;
     font-family: "Nunito", sans-serif;
     background-image: linear-gradient(90deg, #02a1eb, #389fcf);
-    gap: 1px;
+    gap: 10px;
     align-items: center;   
   }
 
@@ -181,7 +210,7 @@ body {
   }
 
   .left-content {
-    width: 90vw;
+    width: 96vw;
     margin-top: 2px;
     margin-left: 5px;
     display: flex;
@@ -189,7 +218,7 @@ body {
   }
 
   
-  .input-email-span label {
+  .main-content label {
     display: flex;
     flex-direction: column;    
     color: white;
@@ -199,12 +228,13 @@ body {
     
   }
 
+
   .input-email {
     background-color: white;
     margin-top: 10px;
     font-size: 1em;
     padding: 5px;
-    width: 50vw;
+    width: 5vw;
     height: 30px;
   }
 
@@ -227,5 +257,13 @@ body {
     width: 80vw;
   }
 
+  @media (max-width: 400px) {
+   .input-email-span {
+    margin-left: 15px;
+   }
+   .input-email-span label {
+    font-size: small;
+   }
+  }
  
 }
