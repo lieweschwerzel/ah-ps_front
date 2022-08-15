@@ -37,6 +37,7 @@ function App() {
   const handleSubmit = (e) => {
     setMail(tmpmail)
     msg ? setMsg(false) : setMsg(true)
+    setItemList([])
     e.preventDefault();
 
     console.log(`Form submitted, ${mail}`);
