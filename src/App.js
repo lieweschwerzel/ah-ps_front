@@ -16,7 +16,6 @@ function App() {
 
   // Read all items by mail axios.get(`https://price-tracker-back.herokuapp.com/api/item/${mail}`)
   useEffect(() => {
-    document.title = "AHA Bonus NIET gemist"
     if (mail !== '') {
       axios.get(url + `/subs/email/${mail}`)
         .then(res => {
@@ -59,48 +58,38 @@ function App() {
 
       <div className='main-content'>
         {(mail.length < 1) && (
-          <span className='input-email-wrapper'>
+          <div className='input-email-wrapper'>
             <form onSubmit={handleSubmit}>
               <p for="email" ></p>
               <input type="email" id="email" name="email" onChange={(e) => setTmpMail(e.target.value)} placeholder="Enter your email"></input>
               <button type='submit'>Login</button>
             </form>
-            {/* <input type="email" id="email" name="email" required></input>
-          <input type="button" id='button' onClick={event => setMail(event.target.value.toLowerCase())} value="Login" /> */}
-          </span>
+          </div>
         )}
         {(mail.length > 0) && (
           <div className='logged-in-wrapper'>
             <p>{mail}</p>
-            <button onClick={(e) => setMail('')}>X</button>
+            <button onClick={(e) => setMail('')&setTmpMail('')}>X</button>
           </div>
-
         )}
-
         <SearchBar className='search-bar' placeholder="Search and add products..." data={changeMessage} mail={mail} />
-
         {(mail.length > 0) && (
           <div className="item-list-view">
             <ItemView refresh={changeMessage} ItemList={ItemList} />
-
           </div>
         )}
         <div className='footer-wrapper'>
           <div className='date'>
             {date.length !== 0 ? (
-              <p>db last updated: {date[0].unit}</p>
+              <p>db updated: {date[0].unit}</p>
             ) : (
-              <p>db last updated:</p>
-
+              <p>db updated:</p>
             )
             }
           </div>
         </div>
-
-
       </div>
     </div>
   );
 }
-
 export default App;

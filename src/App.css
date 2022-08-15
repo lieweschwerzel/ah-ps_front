@@ -22,13 +22,6 @@ body {
   align-items: center;
 }
 
-.main-content label {
-  color: white;
-  margin-top: 40px;
-  font-size: large;
-  font-weight: bold;
-}
-
 .left-content {
   margin-top: 22px;
   margin-left: 30px;
@@ -56,11 +49,49 @@ body {
   align-items: center;
   white-space: nowrap;
   line-height: 110%;
+  padding-left: 3px;
 }
 
 .slogan {
   color: white;
 }
+
+.input-email-wrapper {
+  margin-top: 10px;
+  width: 60vw;
+  display: flex;
+  justify-content: right;
+
+}
+
+.input-email-wrapper p {
+  color: white;
+}
+
+.input-email-wrapper input {
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 260px;
+  background-color: white;
+  border-color: #02a1eb;  
+}
+
+.input-email-wrapper input:-webkit-autofill,
+.input-email-wrapper input:-webkit-autofill:hover, 
+.input-email-wrapper input:-webkit-autofill:focus, 
+.input-email-wrapper input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.input-email-wrapper button {
+  margin-left: 5px;
+  background-color: #eb8602;
+  color: white;
+  font-weight: 600;
+  border-color: black;
+  border-width: 1px;
+}
+
 
 .logged-in-wrapper {
   width: 60vw;
@@ -79,42 +110,6 @@ body {
   padding-left: 1px;
   font-size: small;
   margin-top: 5px;
-}
-
-.input-email-wrapper {
-  margin-top: 10px;
-  border: 2px black;
-  border-radius: 2px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  font-size: 18px;
-  padding: 5px;
-  height: 30px;
-  width: 50%;
-}
-
-.input-email-wrapper p {
-  color: white;
-}
-
-.input-email-wrapper input {
-  padding-left: 10px;
-  width: 260px;
-  background-color: white;
-  border-color: #02a1eb;  
-}
-
-.input-email-wrapper input:-webkit-autofill,
-.input-email-wrapper input:-webkit-autofill:hover, 
-.input-email-wrapper input:-webkit-autofill:focus, 
-.input-email-wrapper input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
-}
-
-.input-email-wrapper button {
-  background-color: #eb8602;
-  color: white;
-  border-color: white;
 }
 
 .item-list-view {
@@ -149,7 +144,6 @@ body {
 .dataResult::-webkit-scrollbar-track {
   background: white;
 }
-
 
 .item-wrapper {
   display: flex;
@@ -206,11 +200,7 @@ body {
   bottom: 0; 
   width: 60vw;
   text-align: center;
-}
-
-.footer p{
-  color: white;
-
+  font-size: small;
 }
 
 @media (max-width: 600px) {
@@ -219,88 +209,73 @@ body {
   body {}
 
   .App {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "Nunito", sans-serif;
     background-image: linear-gradient(90deg, #02a1eb, #389fcf);
-    gap: 10px;
+    gap: 0px;
     align-items: center;   
   }
-
-  .top {
-    width: 20vw;
-  }
-
-  .top h1 h1 {
-    width: 110px;
-    padding-left: 2px;
-  }
-
 
   .main-content {
     width: 90vw;
     margin-left: 0px;
     position: relative; 
-
   }
 
   .left-content {
     width: 96vw;
-    margin-top: 2px;
-    margin-left: 5px;
+    margin-top: 0px;
+    margin-left: 0px;
     display: flex;
-    column-gap: 40px;
+    column-gap: 30px;
   }
 
+  .left-content p {
+    margin-top: 35px;
+  }
+
+  .top {
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 30vw;
+  }
+
+  .top h1 h1 {
+    width: 110px;
+    padding-left: 4px;
+  }
+
+  .input-email-wrapper {
+    margin-top: 0px;
+    width: 90vw;
+    display: grid;
+    justify-content: center;
+  }
   
-  .main-content label {
-    display: flex;
-    flex-direction: column;    
-    color: white;
-    margin-top: 5px;
-    font-size: large;
-    font-weight: bold;
-    
+  .logged-in-wrapper {
+    margin-top: 0;
+    width: auto;
   }
-
-
-  .input-email {
-    background-color: white;
-    margin-top: 10px;
-    font-size: 1em;
-    padding: 5px;
-    width: 5vw;
-    height: 30px;
-  }
-
- 
 
   .item-list-view {
     background-color: white;
     border-radius: 2px;
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
     width: 90vw;
     max-height: 70vh;
     overflow: hidden;
     overflow-y: auto;
   }
 
-
-
   .footer-wrapper  {
-    width: 80vw;
+    width: 90vw;
+    font-size: small;
   }
 
   @media (max-width: 400px) {
-   .input-email-span {
-    margin-left: 15px;
-   }
-   .input-email-span label {
-    font-size: small;
-   }
+   
   }
  
 }

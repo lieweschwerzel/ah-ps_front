@@ -43,7 +43,11 @@ function SearchBar({ placeholder, data, props, mail }) {
         }
         else {
             console.log("not added")
-            setWordEntered("not added")
+
+            setWordEntered("Please add your email first")
+            setTimeout(() => {
+                setWordEntered("")
+             }, 1000);
         }
     }
 

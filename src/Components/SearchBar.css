@@ -1,6 +1,6 @@
 .searchInputs {
   display: flex;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .search input {
@@ -88,7 +88,7 @@ a:hover {
 
 @media (max-width: 600px) {
   .searchInputs {
-    margin-top: 0px;
+    margin-top: 20px;
   }
 
   .search input {
