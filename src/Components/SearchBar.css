@@ -64,7 +64,6 @@ input:focus {
   color: black;
 }
 
-
 .dataItem p {
   margin-left: 10px;
 }
@@ -74,8 +73,12 @@ input:focus {
   border-width: 5px;
 }
 
-a {
+.dataResult a {
   text-decoration: none;
+}
+
+.dataResult a:hover {
+  font-size: large;
 }
 
 a:hover {
@@ -134,6 +137,9 @@ a:hover {
     color: black;
   }
 
+  .dataResult .dataItem p:link {
+    text-decoration: none;
+  }
 
   .dataItem p {
     margin-top: 10px;

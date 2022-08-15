@@ -70,7 +70,7 @@ body {
 
 .input-email-wrapper input {
   margin-top: 10px;
-  padding-left: 10px;
+  padding-left: 5px;
   width: 260px;
   background-color: white;
   border-color: #02a1eb;  
@@ -91,7 +91,6 @@ body {
   border-color: black;
   border-width: 1px;
 }
-
 
 .logged-in-wrapper {
   width: 60vw;
@@ -122,14 +121,6 @@ body {
   max-height: 70vh;
   overflow: hidden;
   overflow-y: auto;
-}
-
-.input-email-span p {
-  color: white;
-}
-
-.item-list-view {
-  width: 60vw;
 }
 
 .item-list-view::-webkit-scrollbar {
@@ -251,6 +242,10 @@ body {
     width: 90vw;
     display: grid;
     justify-content: right;
+  }
+
+  .input-email-wrapper input {
+    width: 72vw;
   }
   
   .logged-in-wrapper {

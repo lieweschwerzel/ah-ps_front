@@ -76,7 +76,7 @@ function App() {
         <SearchBar className='search-bar' placeholder="Search and add products..." data={changeMessage} mail={mail} />
         {(mail.length > 0) && (
           <div className="item-list-view">
-            <ItemView refresh={changeMessage} ItemList={ItemList} />
+            <ItemView refresh={changeMessage} mail={mail} ItemList={ItemList} />
           </div>
         )}
         <div className='footer-wrapper'>

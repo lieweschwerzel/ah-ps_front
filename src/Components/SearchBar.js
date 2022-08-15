@@ -19,16 +19,16 @@ function SearchBar({ placeholder, data, props, mail }) {
             axios.get(url + `/prods/search/${searchWord}`)
                 .then(res => {
                     setFilteredData(res.data)
-                }) 
+                })
         };
     }
 
     // Post an item
     const addItemHandler = (value) => {
         if (mail !== "") {
-            axios.post(url +`/subs/post`, {
+            axios.post(url + `/subs/post`, {
                 'email': mail, 'productName': value.productName,
-                'price': value.price, 'unit': value.unit, 'discount': value.discount, 
+                'price': value.price, 'unit': value.unit, 'discount': value.discount,
                 'imgUrl': value.imgUrl, 'productId': value.productId,
                 'productUrl': value.productUrl
             })
@@ -47,7 +47,7 @@ function SearchBar({ placeholder, data, props, mail }) {
             setWordEntered("Please add your email first")
             setTimeout(() => {
                 setWordEntered("")
-             }, 1000);
+            }, 1000);
         }
     }
 
@@ -78,8 +78,15 @@ function SearchBar({ placeholder, data, props, mail }) {
                     {filteredData.slice(0, 20).map((value, key) => {
                         return (
                             <a className="dataItem" onClick={() => addItemHandler(value)}>
-                                <p><img src={value.imgUrl} alt="img" style={{ width: '5%', height: '5%' }}></img> {value.productName}&nbsp;&nbsp;€{value.price}&nbsp;({value.unit}) {value.discount}</p>
+                                <p>
+                                    <img src={value.imgUrl} alt="img" style={{ width: '5%', height: '5%' }}></img>
+                                    <a>{value.productName}</a>
+                                    <span>
+                                        &nbsp;&nbsp;€{value.price}
+                                    </span>
+                                    &nbsp;({value.unit}) {value.discount}
 
+                                </p>
                             </a>
                         );
                     })}
