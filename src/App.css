@@ -247,10 +247,10 @@ body {
   }
 
   .input-email-wrapper {
-    margin-top: 0px;
+    margin-top: -10px;
     width: 90vw;
     display: grid;
-    justify-content: center;
+    justify-content: right;
   }
   
   .logged-in-wrapper {
