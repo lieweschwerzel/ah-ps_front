@@ -71,7 +71,7 @@ body {
 .input-email-wrapper input {
   margin-top: 10px;
   padding-left: 5px;
-  width: 260px;
+  width: 220px;
   background-color: white;
   border-color: #02a1eb;  
 }
@@ -96,6 +96,7 @@ body {
   width: 60vw;
   margin-top: 30px;
   color: white;
+  font-size: medium;
   display:flex;
   justify-content: right;
   gap: 5px;
@@ -109,6 +110,10 @@ body {
   padding-left: 1px;
   font-size: small;
   margin-top: 5px;
+}
+.item-parent {
+  margin-left: -20px;
+  margin-top: -15px;
 }
 
 .item-list-view {
@@ -140,7 +145,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: left;
-  gap: 10px;
+  gap: 5px;
   border-bottom: 1px solid #02a1eb;
 }
 
@@ -154,6 +159,16 @@ body {
 .item-product-name {
   flex: 1;
   text-align: left;
+}
+
+
+.item-unit {
+  flex: 0.1;
+  font-size: small;
+}
+
+.item-price {
+  font-size: sm;
 }
 
 .item-wrapper a:link {
@@ -171,6 +186,7 @@ body {
 
 .item-price {
   flex: 0.1;
+  font-size: small;
 }
 
 .item-discount {
@@ -245,7 +261,7 @@ body {
     margin-top: -10px;
     width: 90vw;
     display: grid;
-    justify-content: right;
+    justify-content: left;
   }
 
   .input-email-wrapper input {
@@ -260,8 +276,6 @@ body {
   }
 
   .item-list-view {
-    background-color: white;
-    border-radius: 2px;
     margin-top: 0px;
     margin-bottom: 45px;
     width: 90vw;
