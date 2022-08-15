@@ -256,6 +256,8 @@ body {
   .logged-in-wrapper {
     margin-top: 5px;
     width: auto;
+    margin-bottom: -20px;
+
   }
 
   .item-list-view {
