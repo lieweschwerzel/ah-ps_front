@@ -7,7 +7,7 @@ import axios from 'axios';
 function SearchBar({ placeholder, data, props, mail }) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
-    const url = `https://ah-ps-spring-boot.herokuapp.com`; //`http://localhost:8080`
+    const url = `http://192.168.1.100:8088`; //`http://localhost:8080`
 
     const handleFilter = (event) => {
         const searchWord = event.target.value;

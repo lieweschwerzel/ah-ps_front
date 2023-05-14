@@ -3,7 +3,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackedItem(props) {
-    const url = `https://ah-ps-spring-boot.herokuapp.com` ; //`http://localhost:8080`
+    const url = `http://192.168.1.100:8088` ; //`http://localhost:8080`
     console.log(props.mail)
     const deleteitemHandler = (id) => {        
         console.log(id);
