@@ -3,8 +3,8 @@ version: '3.7'
 services:
 
   frontend:
-    container_name: frontend
-    build: ./frontend
+    container_name: ahreact
+    build: .
     volumes:
       - './:/app'
       - '/app/node_modules'
